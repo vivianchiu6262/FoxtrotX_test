@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving Forward — Exercise Guide for People Living with a Stoma</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ── FOXTROT X BRAND PALETTE ──────────────────────── */
+  :root {
+    /* Primary */
+    --charcoal:   #2a343d;
+    --yellow:     #eeaf12;
+    /* Secondary */
+    --green:      #6ebe4b;
+    --orange:     #f78d29;
+    --blue:       #56b6b2;
+    /* Tints */
+    --yellow-pale: #fdf6dc;
+    --green-pale:  #eaf7e2;
+    --orange-pale: #fef0e2;
+    --blue-pale:   #e3f5f4;
+    --charcoal-pale: #eaecee;
+    /* Neutrals */
+    --white:      #ffffff;
+    --off-white:  #fafaf8;
+    --mid:        #4a5560;
+    --light:      #7a8a94;
+    --rule:       #dde1e4;
+    /* Shadows */
+    --shadow:     0 4px 24px rgba(42,52,61,0.09);
+    --shadow-lg:  0 8px 48px rgba(42,52,61,0.14);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'League Spartan', sans-serif;
+    background: var(--off-white);
+    color: var(--charcoal);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    background: var(--yellow);
+    color: var(--charcoal);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Large watermark X in background */
+  .hero::after {
+    content: '✕';
+    position: absolute;
+    right: -40px; top: -40px;
+    font-size: 340px;
+    font-weight: 800;
+    color: rgba(42,52,61,0.07);
+    line-height: 1;
+    pointer-events: none;
+    font-family: 'League Spartan', sans-serif;
+  }
+
+  /* Top logo bar */
+  .hero-logo-bar {
+    background: var(--yellow);
+    padding: 28px 40px 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-logo-bar img {
+    height: 72px;
+    display: block;
+  }
+
+  /* Yellow content area */
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 40px 52px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-study-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.6;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'League Spartan', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--white);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    opacity: 0.8;
+    max-width: 580px;
+    margin-bottom: 32px;
+  }
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .badge {
+    background: rgba(42,52,61,0.12);
+    border: 1.5px solid rgba(42,52,61,0.2);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 0.3px;
+  }
+
+  /* Charcoal bottom strip on hero */
+  .hero-strip {
+    background: var(--charcoal);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-strip p {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.3px;
+  }
+  .hero-strip strong { color: var(--yellow); }
+
+  /* ── LAYOUT ───────────────────────────────────────── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── SECTION HEADERS ──────────────────────────────── */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 64px 0 28px;
+    padding-bottom: 18px;
+    border-bottom: 3px solid var(--yellow);
+  }
+  .section-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .icon-teal   { background: var(--blue-pale); }
+  .icon-amber  { background: var(--yellow-pale); }
+  .icon-sage   { background: var(--green-pale); }
+  .icon-coral  { background: var(--orange-pale); }
+
+  .section-head h2 {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: -0.3px;
+  }
+  .section-head p {
+    font-size: 0.87rem;
+    color: var(--light);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+
+  /* ── CALLOUT BOX ──────────────────────────────────── */
+  .callout {
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin: 28px 0;
+    border-left: 5px solid;
+  }
+  .callout-teal  { background: var(--blue-pale);     border-color: var(--blue); }
+  .callout-amber { background: var(--yellow-pale);   border-color: var(--yellow); }
+  .callout-sage  { background: var(--green-pale);    border-color: var(--green); }
+  .callout-coral { background: var(--orange-pale);   border-color: var(--orange); }
+  .callout-navy  { background: var(--charcoal-pale); border-color: var(--charcoal); }
+
+  .callout-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .ct-teal  { color: var(--blue); }
+  .ct-amber { color: #b8860b; }
+  .ct-sage  { color: #4a8c2a; }
+  .ct-coral { color: #c06010; }
+  .ct-navy  { color: var(--charcoal); }
+
+  .callout p { font-size: 0.96rem; }
+  .callout ul { margin-top: 10px; padding-left: 18px; }
+  .callout ul li { margin-bottom: 6px; font-size: 0.94rem; }
+
+  /* ── QUOTE ────────────────────────────────────────── */
+  .pull-quote {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--charcoal);
+    border-left: 5px solid var(--yellow);
+    padding: 18px 24px;
+    margin: 32px 0;
+    background: var(--yellow-pale);
+    border-radius: 0 12px 12px 0;
+  }
+
+  /* ── TIMELINE / PHASE ─────────────────────────────── */
+  .phases { display: grid; gap: 0; margin: 28px 0; }
+  .phase  { display: grid; grid-template-columns: 80px 1fr; gap: 0; }
+  .phase-marker { display: flex; flex-direction: column; align-items: center; }
+  .phase-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700;
+    color: var(--white);
+    flex-shrink: 0; z-index: 1;
+  }
+  .phase-line { width: 2px; flex: 1; min-height: 24px; background: var(--rule); }
+  .phase:last-child .phase-line { display: none; }
+  .phase-content { padding: 0 0 32px 16px; }
+  .phase-label {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .phase-content h3 {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.15rem; font-weight: 700;
+    margin-bottom: 10px; color: var(--charcoal);
+  }
+  .phase-content p  { font-size: 0.94rem; color: var(--mid); margin-bottom: 8px; }
+  .phase-content ul { padding-left: 18px; }
+  .phase-content ul li { font-size: 0.92rem; color: var(--mid); margin-bottom: 5px; }
+
+  .dot-teal  { background: var(--blue); }
+  .dot-amber { background: var(--yellow); }
+  .dot-sage  { background: var(--green); }
+  .dot-coral { background: var(--orange); }
+  .dot-navy  { background: var(--charcoal); }
+  .label-teal  { color: var(--blue); }
+  .label-amber { color: #b8860b; }
+  .label-sage  { color: #4a8c2a; }
+  .label-coral { color: var(--orange); }
+  .label-navy  { color: var(--charcoal); }
+
+  /* ── CARDS ────────────────────────────────────────── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px; margin: 28px 0;
+  }
+  .card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid;
+  }
+  .card-teal  { border-color: var(--blue); }
+  .card-amber { border-color: var(--yellow); }
+  .card-sage  { border-color: var(--green); }
+  .card-coral { border-color: var(--orange); }
+  .card-navy  { border-color: var(--charcoal); }
+
+  .card-emoji { font-size: 26px; margin-bottom: 12px; }
+  .card h3 { font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
+  .card p  { font-size: 0.87rem; color: var(--mid); }
+  .card ul { padding-left: 16px; margin-top: 8px; }
+  .card ul li { font-size: 0.86rem; color: var(--mid); margin-bottom: 4px; }
+
+  /* ── CHECKLIST ────────────────────────────────────── */
+  .checklist { list-style: none; margin: 20px 0; }
+  .checklist li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 0; border-bottom: 1px solid var(--rule);
+    font-size: 0.94rem; color: var(--mid);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check-icon {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--yellow); color: var(--charcoal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+    flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* ── WARNING BOX ──────────────────────────────────── */
+  .warning {
+    background: var(--yellow-pale);
+    border: 2px solid var(--yellow);
+    border-radius: 12px; padding: 22px 26px; margin: 28px 0;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .warning-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+  .warning-text h4 { font-size: 0.95rem; font-weight: 700; color: var(--charcoal); margin-bottom: 6px; }
+  .warning-text p  { font-size: 0.9rem; color: var(--mid); }
+
+  /* ── STAT BAND ────────────────────────────────────── */
+  .stat-band {
+    background: var(--charcoal);
+    color: var(--white);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0; overflow: hidden; margin: 36px 0;
+  }
+  .stat-item {
+    padding: 32px 20px; text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-number {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 2.8rem; font-weight: 800;
+    color: var(--yellow); line-height: 1; margin-bottom: 8px;
+  }
+  .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.5; font-weight: 400; }
+
+  /* ── TABLE ────────────────────────────────────────── */
+  .ex-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.9rem; }
+  .ex-table th {
+    background: var(--charcoal); color: var(--white);
+    padding: 12px 16px; text-align: left;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px;
+  }
+  .ex-table th:first-child { border-radius: 10px 0 0 0; }
+  .ex-table th:last-child  { border-radius: 0 10px 0 0; }
+  .ex-table td {
+    padding: 11px 16px; border-bottom: 1px solid var(--rule);
+    color: var(--mid); vertical-align: top;
+  }
+  .ex-table tr:nth-child(even) td { background: var(--yellow-pale); }
+  .ex-table tr:last-child td { border-bottom: none; }
+  .ex-table tr:last-child td:first-child { border-radius: 0 0 0 10px; }
+  .ex-table tr:last-child td:last-child  { border-radius: 0 0 10px 0; }
+  .ex-table-wrap { border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); margin: 24px 0; }
+
+  /* ── DIVIDER ──────────────────────────────────────── */
+  .divider { border: none; height: 1px; background: var(--rule); margin: 48px 0; }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  .footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.55);
+    text-align: center; padding: 48px 24px;
+    font-size: 0.83rem; line-height: 1.9; font-weight: 400;
+  }
+  .footer strong { color: var(--yellow); }
+  .footer-logo { height: 48px; margin: 0 auto 20px; display: block; opacity: 0.85; }
+
+  /* ── MOBILE ───────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .hero-logo-bar { padding: 20px 20px 14px; }
+    .hero-inner    { padding: 12px 20px 40px; }
+    .hero-strip    { padding: 14px 20px; }
+    .stat-band     { grid-template-columns: 1fr 1fr; }
+    .card-grid     { grid-template-columns: 1fr; }
+    .phase         { grid-template-columns: 56px 1fr; }
+  }
+
+  p + p { margin-top: 12px; }
+  strong { color: var(--charcoal); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────────────────────────── -->
+<div class="hero">
+  <div class="hero-logo-bar">
+    <img src="Foxtrot_X_logo_colour_on_yellow.jpg" alt="FOXTROT X — Moving Without Fear When Living with Stoma">
+  </div>
+  <div class="hero-inner">
+    <div class="hero-study-tag">Patient Resource · Exercise Guide</div>
+    <h1>Moving Forward<br><em>with your stoma</em></h1>
+    <p class="hero-sub">A practical guide to exercise, confidence and activity — written for people living with a stoma and shaped by people just like you.</p>
+    <div class="hero-badges">
+      <span class="badge">Evidence-based</span>
+      <span class="badge">Written with stomal therapy nurses</span>
+      <span class="badge">Written with exercise physiologists</span>
+      <span class="badge">Australian context</span>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <p><strong>FOXTROT X</strong> · Moving Without Fear When Living with Stoma: A Consumer-Led Physical Activity Study</p>
+  </div>
+</div>
+
+<!-- ── PAGE BODY ──────────────────────────────────────────────────────── -->
+<div class="page">
+
+  <!-- ── WHY THIS MATTERS ──────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-teal">💬</div>
+    <div>
+      <h2>You're not alone in feeling uncertain</h2>
+      <p>What the research says about people's experiences</p>
+    </div>
+  </div>
+
+  <p>Many people feel confused, nervous, or unsupported when it comes to exercise after stoma surgery. 
+    A lot of the advice out there is vague, contradictory, or just plain wrong. <strong>If you felt unsure about where to start or what is safe for you, you’re not alone</strong> 
+    - until recently, there were no formal published guidelines for exercise with a stoma anywhere in the world.</p>
+
+  <div class="stat-band">
+    <div class="stat-item">
+      <div class="stat-number">90%</div>
+      <div class="stat-label">of people with a stoma do not meet recommended exercise guidelines</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">94%</div>
+      <div class="stat-label">of people wanted to be given exercise advice after their surgery</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">70%</div>
+      <div class="stat-label">of Australians with a stoma worry about heavy lifting</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">64%</div>
+      <div class="stat-label">are willing to join a supervised exercise program</div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    "The ostomy is for living."
+    <br><span style="font-size:0.8rem; font-style:normal; color: var(--mid); margin-top:8px; display:block;">— Stomal therapy nurse, FOXTROT X workshop</span>
+  </div>
+
+  <div class="callout callout-teal">
+    <div class="callout-title ct-teal">The good news</div>
+    <p>Exercise is safe and beneficial for people with a stoma — including those with a parastomal hernia. 
+      The flip side is also important to highlight - Inactivity (so not doing exercise) is associated with worse outcomes, including a higher risk of hernia formation. 
+      The goal of this guide is to help you move more, with knowledge and confidence. </p>
+  </div>
+
+  <strong>You don’t have to do it alone! </strong> 
+</div>
+<p>Exercise professionals can help you find safe and appropriate ways to become more active based on your individual needs, goals and circumstances. 
+  Throughout this guide, we use the term exercise professional to describe health professionals with expertise in supporting and prescribing exercise, including Accredited Exercise Physiologists (AEPs), physiotherapists and occupational therapists. 
+  In the FOXTROT X program, exercise support is specifically provided by AEPs.</p>
+  
+
+  <!-- ── FEAR & CONFIDENCE ──────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-amber">🧠</div>
+    <div>
+      <h2>Understanding fear and avoidance</h2>
+      <p>Why your brain says "no" — and how to respond</p>
+    </div>
+  </div>
+
+  <p>Fear of exercise after stoma surgery is very common and very understandable. Research shows a strong link between what you've been <em>told</em> about exercise and how much you actually do. If you've been told to "avoid lifting" or "be careful," your brain will naturally protect you by avoiding movement — even when it is safe.</p>
+
+  <p>This is called <strong>fear-avoidance</strong>: the belief that activity will cause injury leads to avoiding it, which can then cause deconditioning, reduced confidence, and lower quality of life.</p>
+
+  <div class="card-grid">
+    <div class="card card-amber">
+      <div class="card-emoji">😰</div>
+      <h3>Common fears people report</h3>
+      <ul>
+        <li>My bag will leak during exercise</li>
+        <li>I'll develop a hernia</li>
+        <li>Movement will harm my stoma</li>
+        <li>I'll embarrass myself in public</li>
+        <li>I'm too deconditioned to start</li>
+      </ul>
+    </div>
+    <div class="card card-teal">
+      <div class="card-emoji">✅</div>
+      <h3>What the evidence says</h3>
+      <ul>
+        <li>Fear itself (not symptoms) often drives avoidance</li>
+        <li>Inactivity increases hernia risk, not exercise</li>
+        <li>Leakage during exercise is manageable</li>
+        <li>Home-based programs remove public barriers</li>
+        <li>Confidence grows quickly with graded activity</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-amber">
+    <div class="callout-title ct-amber">A note on family worry</div>
+    <p>About 1 in 3 people with a stoma say their family worries about them "hurting their stoma" during exercise. While this comes from love, it can reinforce avoidance. Sharing this guide with your support person may help you both feel more confident.</p>
+  </div>
+
+  <!-- ── GETTING STARTED ────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-sage">🌱</div>
+    <div>
+      <h2>Before you begin</h2>
+      <p>Setting yourself up for success</p>
+    </div>
+  </div>
+
+  <p>A good foundation makes all the difference. Before starting any exercise program, consider the following:</p>
+
+  <div class="card-grid">
+    <div class="card card-sage">
+      <div class="card-emoji">📋</div>
+      <h3>Talk to your healthcare team</h3>
+      <p>Let your stomal therapy nurse or exercise physiologist know you're planning to start exercising. They can check your appliance fit and advise on any specific considerations for you.</p>
+    </div>
+    <div class="card card-sage">
+      <div class="card-emoji">🩹</div>
+      <h3>Know your appliance type</h3>
+      <p>Whether you use a flat or convex plate matters for certain exercises. Your nurse can explain how your specific appliance behaves and what to watch for during physical activity.</p>
+    </div>
+    <div class="card card-sage">
+      <div class="card-emoji">⏱️</div>
+      <h3>Check your timing</h3>
+      <p>Try to exercise when your stoma is typically less active (often 1–2 hours after a meal). If your output is unpredictable, your nurse can help you identify patterns.</p>
+    </div>
+    <div class="card card-sage">
+      <div class="card-emoji">🏠</div>
+      <h3>Start at home</h3>
+      <p>Home-based exercise removes the worry of public leakage. Once your confidence builds, you can expand to community settings if you choose to.</p>
+    </div>
+  </div>
+
+  <!-- ── STOMA PREPARATION ──────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-teal">🛡️</div>
+    <div>
+      <h2>Preparing your stoma for exercise</h2>
+      <p>Practical steps from stomal therapy nurses</p>
+    </div>
+  </div>
+
+  <p>These practical strategies were developed with stomal therapy nurses specifically for people who exercise. They can make a real difference to your comfort and confidence.</p>
+
+  <ul class="checklist">
+    <li>
+      <div class="check-icon">⏰</div>
+      <div><strong>Change your bag about 1 hour before exercise</strong> — a fresh bag has gone through primary adhesion and is starting secondary adhesion. This gives you the strongest seal during activity. Changing immediately before exercise (with adhesive still wet) can increase risk of lifting.</div>
+    </li>
+    <li>
+      <div class="check-icon">💧</div>
+      <div><strong>Use antiperspirant (not deodorant) around your stoma site</strong> — if you sweat heavily, applying a roll-on antiperspirant to the skin around your bag before putting it on can significantly reduce the chance of your bag lifting during exercise. This works for many people, though not everyone.</div>
+    </li>
+    <li>
+      <div class="check-icon">👗</div>
+      <div><strong>Consider a support garment</strong> — a stoma belt or hernia support garment can provide physical security and reduce anxiety during exercise. However, your garment should complement muscle activity, not replace it. Your nurse can advise on the right product for you.</div>
+    </li>
+    <li>
+      <div class="check-icon">🌡️</div>
+      <div><strong>Be aware of heat</strong> — hot gyms and vigorous outdoor exercise in warm weather increase sweating and can affect adhesion. Ventilated clothing and lighter exercise intensity can help on very hot days.</div>
+    </li>
+    <li>
+      <div class="check-icon">📐</div>
+      <div><strong>Know your appliance type for floor-based exercises</strong> — if you use a convex plate (which applies gentle pressure around the stoma), let your exercise physiologist know. Some floor-based abdominal exercises may need to be modified. This is not a reason to avoid exercise — just a conversation to have first.</div>
+    </li>
+    <li>
+      <div class="check-icon">🔄</div>
+      <div><strong>Check your appliance fit as your body changes</strong> — weight loss and regain after surgery is common, and your body composition changes during an exercise program. These changes can affect how your bag fits. Book a review with your stomal therapy nurse if you notice any changes in fit or leakage patterns.</div>
+    </li>
+  </ul>
+
+  <div class="warning">
+    <div class="warning-icon">⚠️</div>
+    <div class="warning-text">
+      <h4>If leakage happens</h4>
+      <p>Leakage during exercise is possible — especially as you're starting out. Having a small kit with a spare bag, wipes, and a change of clothes nearby can help you feel prepared. Over time, most people find their management strategies improve significantly.</p>
+    </div>
+  </div>
+
+  <!-- ── CORE & BREATHING ────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-amber">🫁</div>
+    <div>
+      <h2>Understanding your core — and why it matters</h2>
+      <p>The foundation of safe exercise with a stoma</p>
+    </div>
+  </div>
+
+  <p>Abdominal surgery changes how your core muscles work. Understanding this is one of the most important things you can do to exercise safely and protect against hernia.</p>
+
+  <div class="callout callout-navy">
+    <div class="callout-title ct-navy">What is the "core"?</div>
+    <p>Your core is a group of deep muscles — including the transversus abdominis (your deepest abdominal layer), the pelvic floor, and the diaphragm — that work together to stabilise your spine and manage pressure inside your abdomen. After stoma surgery, these muscles often need to be retrained and strengthened.</p>
+  </div>
+
+  <p>Why are some clinicians cautious about exercise after stoma surgery? The concern is mostly about <strong>intra-abdominal pressure (IAP)</strong> — the steady-state pressure inside your abdominal cavity that you use for every movement in your day: getting out of bed, standing up, lifting a shopping bag. Bigger, more effortful movements create bigger, more rapid changes in IAP — and some treating teams respond by recommending movement restrictions to reduce this.</p>
+
+  <p>The problem is, avoiding movement altogether isn't realistic — and the evidence doesn't support long-term loading restrictions as necessary for recovery. <strong>Humans were designed to move.</strong> The goal isn't to avoid changes in IAP; it's to learn to manage them.</p>
+
+  <div class="callout callout-navy">
+    <div class="callout-title ct-navy">The balloon analogy</div>
+    <p>Think of your abdomen like a balloon inside a box. When you inflate the balloon, pressure builds and pushes outward — including downward on your pelvic floor and lower abdominal muscles. Now imagine slowly letting air out of the balloon as you do something effortful. The pressure becomes <em>controlled, stable and consistent</em>. That's exactly what <strong>exhaling on effort</strong> does for your body.</p>
+    <p style="margin-top:10px;">Whether you're lifting a laundry basket, doing a squat, or picking up a grandchild — exhaling during the effort phase helps offset pressure and keeps it stable internally.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card card-amber">
+      <div class="card-emoji">💨</div>
+      <h3>"Exhale with effort"</h3>
+      <p>This simple cue applies to all effortful movements — lifting, pushing, pulling, and exercise. Breathe out as you do the hard part. This habit carries through from your very first session to your most advanced exercises.</p>
+      <ul>
+        <li>Exhale during the effort phase of every movement</li>
+        <li>Never hold your breath during exercise</li>
+        <li>This applies to lifting, squatting, pushing, and core work</li>
+      </ul>
+    </div>
+    <div class="card card-amber">
+      <div class="card-emoji">🤲</div>
+      <h3>Try this now — diaphragmatic breathing</h3>
+      <p>Place one hand on your chest and another on your belly. As you inhale, the hand on your belly should rise <em>before</em> the hand on your chest. Repeat 8–10 times. Try this in the morning before getting up, or before bed.</p>
+      <ul>
+        <li>This is belly breathing, not chest breathing</li>
+        <li>It's the foundation of pressure management</li>
+        <li>Practice daily until it feels natural</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-amber">
+    <div class="callout-title ct-amber">A note on your stoma and nerve endings</div>
+    <p>Your stoma — unlike the rest of your body — has <strong>no nerve endings</strong>. This means you may not be able to feel if it is bumped or compressed during exercise. For this reason, avoid lying directly on your stomach or applying direct pressure to your stoma site. This isn't a reason to avoid floor-based exercise altogether — just a reason to position yourself thoughtfully, which your exercise physiologist can help with.</p>
+  </div>
+
+  <p><strong>Wearing a support belt is not the same as using your core.</strong> If you rely entirely on a belt without activating your muscles, you're not rebuilding the strength you need for daily life. The goal is to use both together, progressively shifting more work to your muscles over time.</p>
+
+  <div class="callout callout-teal">
+    <div class="callout-title ct-teal">Don't avoid abdominal exercise</div>
+    <p>Surveys of people with a stoma show nearly half worry about abdominal exercises. But avoiding them can actually <em>increase</em> your risk of hernia by weakening the muscles that protect your stoma. The key is starting gently and progressively — not avoiding them entirely. An exercise physiologist or physiotherapist experienced in this area can guide you safely.</p>
+  </div>
+
+  <!-- ── PROGRESSION GUIDE ───────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-teal">📈</div>
+    <div>
+      <h2>Your exercise progression</h2>
+      <p>A staged approach to building strength and confidence</p>
+    </div>
+  </div>
+
+  <p>Exercise should be progressive and personalised. The stages below provide a general framework — your exercise physiologist will tailor this to your specific fitness, goals, and stoma considerations.</p>
+
+  <div class="phases">
+
+    <div class="phase">
+      <div class="phase-marker">
+        <div class="phase-dot dot-teal">1</div>
+        <div class="phase-line"></div>
+      </div>
+      <div class="phase-content">
+        <div class="phase-label label-teal">Weeks 1–3 · Foundation</div>
+        <h3>Building awareness and gentle movement</h3>
+        <p>The goal of this phase is to reconnect with your body, establish breathing and core awareness, and build confidence at home.</p>
+        <ul>
+          <li>Diaphragmatic breathing and breath control practice</li>
+          <li>Gentle walking (starting 10 minutes, building slowly)</li>
+          <li>Pelvic floor activation</li>
+          <li>Gentle abdominal hollowing and bracing in lying/sitting</li>
+          <li>Light stretching and mobility work</li>
+          <li>Learning stoma preparation strategies before exercise</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-marker">
+        <div class="phase-dot dot-amber">2</div>
+        <div class="phase-line"></div>
+      </div>
+      <div class="phase-content">
+        <div class="phase-label label-amber">Weeks 4–6 · Building</div>
+        <h3>Introducing resistance and moderate aerobic exercise</h3>
+        <p>As confidence and core awareness build, you'll begin working with resistance bands and increasing aerobic intensity.</p>
+        <ul>
+          <li>Resistance band exercises for upper and lower body</li>
+          <li>Bodyweight exercises with good technique (e.g., sit-to-stand, modified squats)</li>
+          <li>Moderate aerobic activity (stationary cycling, brisk walking)</li>
+          <li>Standing core exercises with breath control</li>
+          <li>Balance and stability challenges</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-marker">
+        <div class="phase-dot dot-sage">3</div>
+        <div class="phase-line"></div>
+      </div>
+      <div class="phase-content">
+        <div class="phase-label label-sage">Weeks 7–9 · Progressive Loading</div>
+        <h3>Adding challenge and functional strength</h3>
+        <p>With your foundation established, this phase introduces heavier resistance and more functional movements tied to your daily activities and goals.</p>
+        <ul>
+          <li>Progressed resistance training (e.g., ankle weights, heavier bands)</li>
+          <li>Functional movements relevant to your lifestyle (e.g., carrying, gardening, sport-specific drills)</li>
+          <li>Increased aerobic duration or intensity</li>
+          <li>Single-limb exercises for balance and strength</li>
+          <li>Floor-based exercises (if appliance type permits, with modifications if needed)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-marker">
+        <div class="phase-dot dot-coral">4</div>
+        <div class="phase-line"></div>
+      </div>
+      <div class="phase-content">
+        <div class="phase-label label-coral">Weeks 10–12 · Consolidation</div>
+        <h3>Maintaining gains and planning for the long term</h3>
+        <p>The final phase focuses on embedding exercise as a sustainable habit and transitioning to independent exercise.</p>
+        <ul>
+          <li>Full exercise program performed with confidence</li>
+          <li>Gradual transition to self-managed sessions</li>
+          <li>Planning for ongoing activity (community classes, outdoor exercise, sport)</li>
+          <li>Review of stoma management strategies refined over the program</li>
+          <li>Discussion about long-term maintenance with your exercise physiologist</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout callout-sage">
+    <div class="callout-title ct-sage">Individual variation matters</div>
+    <p>Your starting point, your stoma type (colostomy, ileostomy, or urostomy), how long you've had your stoma, and your personal goals all influence your program. People who are further from surgery tend to have more confidence and readiness. People managing cancer treatment alongside exercise have different energy levels and recovery needs. Your program will be adapted specifically for you.</p>
+  </div>
+
+  <!-- ── TYPES OF EXERCISE ───────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-coral">🏃</div>
+    <div>
+      <h2>Types of exercise — what to know</h2>
+      <p>What counts, what's safe, and what to watch for</p>
+    </div>
+  </div>
+
+  <div class="ex-table-wrap">
+    <table class="ex-table">
+      <thead>
+        <tr>
+          <th>Exercise type</th>
+          <th>Examples</th>
+          <th>Stoma considerations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Walking</strong></td>
+          <td>Daily walking, hiking, treadmill</td>
+          <td>Excellent starting point. Minimal impact on stoma. Build distance gradually.</td>
+        </tr>
+        <tr>
+          <td><strong>Aerobic / Cardio</strong></td>
+          <td>Cycling, swimming, dancing, low-impact aerobics</td>
+          <td>Increased sweating — apply antiperspirant beforehand. Ensure good bag adhesion. Well tolerated by most people.</td>
+        </tr>
+        <tr>
+          <td><strong>Resistance training</strong></td>
+          <td>Resistance bands, bodyweight exercises, weights</td>
+          <td>Use breath control (exhale on effort). Engage core before each movement. Avoid breath-holding. Highly recommended for hernia prevention.</td>
+        </tr>
+        <tr>
+          <td><strong>Core / Abdominal</strong></td>
+          <td>Abdominal hollowing, pelvic floor, plank variations</td>
+          <td>Start gently. Avoid crunches early on — deep core work is safer and more effective. Progress with guidance.</td>
+        </tr>
+        <tr>
+          <td><strong>Yoga / Pilates</strong></td>
+          <td>Clinical pilates, yoga classes</td>
+          <td>Excellent for core strength and flexibility. Inform the instructor about your stoma. Some inversions and poses may need modification.</td>
+        </tr>
+        <tr>
+          <td><strong>Swimming</strong></td>
+          <td>Lap swimming, aqua aerobics</td>
+          <td>Modern stoma appliances are waterproof. Many people swim confidently. A stoma guard or specialist swimwear may increase confidence.</td>
+        </tr>
+        <tr>
+          <td><strong>Sport</strong></td>
+          <td>Tennis, golf, team sports, running</td>
+          <td>Many people with stomas return to sport at all levels. A stoma guard can provide impact protection for contact sports. Discuss with your EP.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── HERNIA PREVENTION ───────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-teal">🛡️</div>
+    <div>
+      <h2>Parastomal hernia — what it is and how exercise helps</h2>
+      <p>Facts to replace fear</p>
+    </div>
+  </div>
+
+  <p>Parastomal hernia (a bulge that can develop around your stoma) is one of the most common complications after stoma surgery, affecting up to 50% of people within five years. It is understandable to be concerned about it — but the relationship between exercise and hernia is not what many people expect.</p>
+
+  <div class="card-grid">
+    <div class="card card-teal">
+      <div class="card-emoji">📚</div>
+      <h3>What causes hernia?</h3>
+      <p>Hernia develops when the abdominal wall around the stoma is weak. Surgical factors (including the size of the opening created) play a role, as do weight and inactivity. Your exercise physiologist and surgeon can discuss your individual risk factors.</p>
+    </div>
+    <div class="card card-teal">
+      <div class="card-emoji">💪</div>
+      <h3>How exercise helps prevent it</h3>
+      <p>Strong abdominal muscles support the stoma site from the inside. Physical activity (especially resistance training) has been associated with lower rates of hernia in people with stomas. Exercise is a protective strategy, not a risk factor.</p>
+    </div>
+    <div class="card card-amber">
+      <div class="card-emoji">❓</div>
+      <h3>If you already have a hernia</h3>
+      <p>Exercise is still safe and recommended. Modifications may be needed, and a support garment is often helpful. The HALT (Hernia Active Living Trial) study found Pilates-style exercise was both safe and acceptable for people with a parastomal hernia. Speak with your team.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-teal">
+    <div class="callout-title ct-teal">Safe lifting practice</div>
+    <p>The concern about "lifting" is real but often overstated. The key is <em>technique</em>, not avoidance. Always exhale during the lift, engage your core before starting, and avoid holding your breath. Progressive loading through your exercise program will build the strength to lift safely for your daily activities — including things like shopping, gardening, and grandchildren.</p>
+  </div>
+
+  <!-- ── EATING AROUND EXERCISE ─────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-amber">🍽️</div>
+    <div>
+      <h2>Food, energy and your stoma</h2>
+      <p>Practical tips for exercising well</p>
+    </div>
+  </div>
+
+  <ul class="checklist">
+    <li>
+      <div class="check-icon">⏱️</div>
+      <div><strong>Exercise timing matters</strong> — many people prefer to exercise when their stoma is less active. For colostomy and ileostomy, this is often 1–2 hours after eating. Trial and error will help you identify your own pattern.</div>
+    </li>
+    <li>
+      <div class="check-icon">🥗</div>
+      <div><strong>Eat well to exercise well</strong> — if you're undereating or avoiding foods out of anxiety, you may feel low in energy during exercise. A dietitian experienced in stoma care can help you find a sustainable eating pattern that supports activity.</div>
+    </li>
+    <li>
+      <div class="check-icon">💧</div>
+      <div><strong>Hydration is especially important</strong> — ileostomy in particular can increase fluid and electrolyte losses. Drink water before, during, and after exercise. If you feel dizzy or fatigued, check your hydration levels and talk with your team.</div>
+    </li>
+    <li>
+      <div class="check-icon">🚫</div>
+      <div><strong>Don't restrict your diet to avoid output during exercise</strong> — severely restricting food intake before exercise is not safe or sustainable. With time and practice, most people find their stoma management strategies improve without needing dietary restriction.</div>
+    </li>
+  </ul>
+
+  <!-- ── CANCER & TREATMENT ─────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-coral">🎗️</div>
+    <div>
+      <h2>If you've had cancer treatment</h2>
+      <p>What's different — and what to expect</p>
+    </div>
+  </div>
+
+  <p>If you've had chemotherapy, radiation, or other cancer treatment alongside your stoma surgery, some additional considerations apply. Exercise during and after cancer treatment is safe and strongly encouraged, but the approach may look a little different.</p>
+
+  <div class="card-grid">
+    <div class="card card-coral">
+      <div class="card-emoji">🔋</div>
+      <h3>Managing fatigue</h3>
+      <p>Cancer-related fatigue is real and is different from ordinary tiredness. Paradoxically, gentle exercise often <em>reduces</em> fatigue rather than worsening it. Start very low and slow. Some days will be better than others — your program can flex with you.</p>
+    </div>
+    <div class="card card-coral">
+      <div class="card-emoji">🦴</div>
+      <h3>Bone health</h3>
+      <p>Certain medications (including steroids used for IBD or some cancer treatments) can affect bone density. Weight-bearing exercise and resistance training are particularly important for bone health in this context.</p>
+    </div>
+    <div class="card card-coral">
+      <div class="card-emoji">🧭</div>
+      <h3>Readiness varies</h3>
+      <p>People who have had cancer often approach their stoma differently to those who had surgery for bowel disease. Fear of recurrence, a changed relationship with the body, and treatment side effects all influence readiness. Your EP is trained to work with this — please be honest about how you're feeling.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-coral">
+    <div class="callout-title ct-coral">Stop exercise and contact your team if you experience:</div>
+    <ul>
+      <li>Sudden increase in stoma output or change in colour/odour</li>
+      <li>Severe abdominal pain during or after exercise</li>
+      <li>Unexpected swelling or change in the appearance of your stoma</li>
+      <li>Dizziness, chest pain, or difficulty breathing</li>
+      <li>Any appliance issue that does not resolve with your usual strategies</li>
+    </ul>
+  </div>
+
+  <!-- ── MINDSET ─────────────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-sage">💚</div>
+    <div>
+      <h2>The psychological side of exercise</h2>
+      <p>How to build and keep your confidence</p>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    "It's all down to confidence. The fear of moving is so real for patients who are fresh with their stomas."
+    <br><span style="font-size:0.8rem; font-style:normal; color: var(--mid); margin-top:8px; display:block;">— Exercise physiologist, FOXTROT X expert workshop</span>
+  </div>
+
+  <p>Motivation and anxiety often coexist. You might genuinely want to exercise and simultaneously feel frightened to start. Both things can be true. A good exercise program works with that reality, not against it.</p>
+
+  <div class="callout callout-sage">
+    <div class="callout-title ct-sage">Reframing how you think about exercise</div>
+    <ul>
+      <li><strong>Focus on what you can do</strong> — not what you can't. Start small and celebrate each win.</li>
+      <li><strong>Connect exercise to what you care about</strong> — whether that's keeping up with grandchildren, returning to a favourite activity, feeling less tired, or simply feeling more like yourself.</li>
+      <li><strong>Higher intensity = feeling better</strong> — not something to fear. That initial reluctance before a session often gives way to energy and mood improvement after it.</li>
+      <li><strong>You will have good and bad days</strong> — this is normal for everyone. A bad day is not a setback; it is part of the process.</li>
+      <li><strong>Structure reduces anxiety</strong> — knowing exactly what you're doing, why you're doing it, and how you'll progress helps many people feel safer starting.</li>
+    </ul>
+  </div>
+
+  <!-- ── MIXED STOMA POPULATIONS ────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-amber">👥</div>
+    <div>
+      <h2>Your stoma, your context</h2>
+      <p>Understanding how your background shapes your journey</p>
+    </div>
+  </div>
+
+  <p>People with stomas come from very different backgrounds and have different reasons for their surgery. Your experience of exercise is likely shaped by your context.</p>
+
+  <div class="card-grid">
+    <div class="card card-navy">
+      <div class="card-emoji">🎗️</div>
+      <h3>Cancer (colorectal, bladder, gynaecological)</h3>
+      <p>Some people feel resentful of their stoma as a symbol of their illness, and this is completely valid. Building a new, positive relationship with physical activity can be a meaningful part of recovery — but at your pace.</p>
+    </div>
+    <div class="card card-navy">
+      <div class="card-emoji">🔴</div>
+      <h3>IBD (Crohn's, colitis)</h3>
+      <p>If you've lived with IBD, your stoma may have genuinely given you your quality of life back. Energy and motivation to exercise are often higher — but years of illness and medications can mean deconditioning and bone health need particular attention.</p>
+    </div>
+    <div class="card card-navy">
+      <div class="card-emoji">🫧</div>
+      <h3>Urostomy (urinary stoma)</h3>
+      <p>People with urinary stomas are underrepresented in stoma research and exercise programs. Your stoma functions differently and has different management considerations — but the principles of exercise safety, hernia prevention, and progressive loading apply to you too. Make sure your team is aware of your stoma type.</p>
+    </div>
+    <div class="card card-navy">
+      <div class="card-emoji">⏳</div>
+      <h3>Temporary stoma</h3>
+      <p>If your stoma may be reversed in future, it's still worth investing in your fitness and stoma management now. Uncertainty about reversal timing can increase anxiety and lead to avoidance — try not to let that put your health on hold.</p>
+    </div>
+  </div>
+
+  <!-- ── FAQ ────────────────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-teal">❓</div>
+    <div>
+      <h2>Common questions</h2>
+      <p>Answers from nurses, physiologists and the research</p>
+    </div>
+  </div>
+
+  <div class="callout callout-teal">
+    <div class="callout-title ct-teal">Can I swim with a stoma?</div>
+    <p>Yes. Modern stoma appliances are waterproof and designed for water. Many people swim regularly and competitively. A fresh bag change before swimming and using a specialist adhesive paste can provide extra security. Stoma-specific swimwear and guards are available if needed.</p>
+  </div>
+
+  <div class="callout callout-amber">
+    <div class="callout-title ct-amber">How long after surgery can I start exercising?</div>
+    <p>Gentle walking can typically begin soon after surgery (within a few weeks). More structured exercise, including resistance training, is generally introduced after approximately 6–12 weeks. Your surgeon and stomal therapy nurse will advise based on your specific recovery. The FOXTROT X program is designed for people who are at least 26 weeks post-surgery.</p>
+  </div>
+
+  <div class="callout callout-sage">
+    <div class="callout-title ct-sage">Do I need special equipment?</div>
+    <p>No. A yoga mat, resistance bands, and ankle weights are sufficient for an effective home-based program. Your exercise physiologist may suggest specific equipment as you progress. You don't need a gym, and the FOXTROT X program is designed to be done at home via telehealth.</p>
+  </div>
+
+  <div class="callout callout-coral">
+    <div class="callout-title ct-coral">What if my bag leaks during exercise?</div>
+    <p>This can happen, especially at first. Having a preparation kit nearby (spare bag, clips, wipes, change of clothes) helps. As you develop your management strategies — including timing, antiperspirant use, and appropriate support garments — leakage during exercise typically becomes less frequent. Tell your nurse and exercise physiologist if it's happening regularly; there are usually practical solutions.</p>
+  </div>
+
+  <div class="callout callout-navy">
+    <div class="callout-title ct-navy">I've been told "no exercise" — who do I listen to?</div>
+    <p>Conflicting advice about exercise after stoma surgery has been very common. Research shows that patients routinely receive inconsistent, cautious, or incorrect information. The EXPASS Best Practice Recommendations (UK, 2024) are the first formal published consensus guidelines for exercise after stoma surgery. These support a return to exercise including strength training, cardio, and most sports. If you're unsure, ask your team to refer you to an exercise physiologist experienced in stoma care.</p>
+  </div>
+
+  <!-- ── GP CARE PLANS ──────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-teal">🏥</div>
+    <div>
+      <h2>Accessing exercise support through your GP</h2>
+      <p>GP Chronic Condition Management Care Plans — what they are and how to use them</p>
+    </div>
+  </div>
+
+  <p>If cost is a barrier to accessing an exercise physiologist or other allied health professional, a <strong>GP Chronic Condition Management Care Plan (GPCCMP)</strong> may be able to help. These are federally funded programs through Medicare Australia, designed to support people living with long-term health conditions.</p>
+
+  <div class="callout callout-teal">
+    <div class="callout-title ct-teal">What is a GP Chronic Condition Management Care Plan?</div>
+    <p>If you have a chronic medical condition — one that has lasted, or is expected to last, six months or longer — your GP can develop a care plan with you. This plan outlines your health needs, treatment goals, and the healthcare professionals involved in your care. Having a stoma following cancer surgery, IBD, or other long-term conditions typically qualifies.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card card-teal">
+      <div class="card-emoji">💊</div>
+      <h3>What services are subsidised?</h3>
+      <p>Once your GP has prepared a management plan and provided a referral, you are eligible for:</p>
+      <ul>
+        <li><strong>Up to 5 subsidised allied health appointments</strong> per calendar year</li>
+        <li><strong>Up to 10 sessions yearly</strong> for Aboriginal and Torres Strait Islander People</li>
+        <li>Services include exercise physiologists, physiotherapists, dietitians, psychologists, occupational therapists, podiatrists, and more</li>
+      </ul>
+    </div>
+    <div class="card card-teal">
+      <div class="card-emoji">🗣️</div>
+      <h3>How to access it</h3>
+      <p>Speak with your GP at your next appointment and ask whether a GP Chronic Condition Management Care Plan is appropriate for your situation. You can request a referral specifically to an <strong>Accredited Exercise Physiologist (AEP)</strong> experienced in chronic disease or post-surgical rehabilitation.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-sage">
+    <div class="callout-title ct-sage">Reputable exercise programs</div>
+    <p>The <strong>me+™ recovery program by Convatec</strong> provides a three-phase series of gentle movements designed to enhance recovery and reconnection with the abdominal muscles after stoma surgery. It is delivered online and may be a useful starting point, particularly while you are waiting to access a supervised program. Ask your stomal therapy nurse for more information.</p>
+  </div>
+
+  <!-- ── RESOURCES ───────────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-icon icon-sage">📖</div>
+    <div>
+      <h2>Where to go for more information</h2>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card card-sage">
+      <div class="card-emoji">🌐</div>
+      <h3>EXPASS Recommendations</h3>
+      <p>The first international best-practice guidelines for exercise after stoma surgery. Developed by experts in the UK under the Association of Stoma Care Nurses (ASCN UK). Ask your nurse or EP about these.</p>
+    </div>
+    <div class="card card-sage">
+      <div class="card-emoji">🇦🇺</div>
+      <h3>Australian Association of Stomal Therapy Nurses (AASTN)</h3>
+      <p>The peak body for stomal therapy nurses in Australia. Their website has clinical guidelines and you can find a stomal therapy nurse in your area.</p>
+    </div>
+    <div class="card card-sage">
+      <div class="card-emoji">🏃</div>
+      <h3>Exercise & Sports Science Australia (ESSA)</h3>
+      <p>ESSA accredits Exercise Physiologists in Australia. An Accredited Exercise Physiologist (AEP) has university-level training in chronic disease and post-surgical rehabilitation.</p>
+    </div>
+    <div class="card card-sage">
+      <div class="card-emoji">🤝</div>
+      <h3>Ostomy Australia</h3>
+      <p>Peer support and practical information for people living with a stoma in Australia, including community forums, supply information, and local groups.</p>
+    </div>
+  </div>
+
+</div><!-- end .page -->
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+<div class="footer">
+  <img src="Foxtrot_X_logo_colour_on_yellow.jpg" alt="FOXTROT X" class="footer-logo" style="filter: brightness(0) invert(1); opacity: 0.7;">
+  <p><strong>FOXTROT X Exercise program</strong></p>
+  <p>The information provided in this resource is for general education purposes only and is not intended to be used as a replacement for individual medical advice. Please seek the advice of your GP, stoma nurse, or other qualified health professional regarding any medical condition or before beginning any exercise program.</p>
+  <p style="margin-top: 8px; font-size: 0.75rem; opacity: 0.6;">Informed by: EXPASS Recommendations (Russell et al., 2024) · Stankiewicz et al. (2025) Journal of Advanced Nursing · FOXTROT X Healthcare Professional Workshops (2026)</p>
+</div>
+
+</body>
+</html>
